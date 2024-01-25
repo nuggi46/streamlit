@@ -1,0 +1,6 @@
+os
+pandas
+streamlit
+base64
+pyarrow.parquet
+sklearn.metrics.pairwise
