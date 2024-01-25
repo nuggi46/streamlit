@@ -15,6 +15,8 @@ df_restaurante = get_restaurante(ruta1)
 
 df_florida = df_restaurante[df_restaurante['ubicacion'] == 'Florida']
 df_pennsylvania = df_restaurante[df_restaurante['ubicacion'] == 'Pennsylvania']
+df_user=df_restaurante['user_id'].unique()
+df_user2=df_user[:20]
 
 def get_user(fn2):
     return pd.read_parquet(ruta2)
@@ -266,7 +268,7 @@ def recommend_atributo():
 #sección recomendación influencer
 def recommend_foodie():
 # Crear un menú desplegable con la lista de películas para el sistema de recomendación
-    influencer_referencia = st.selectbox('Seleccion un influencer de referencia', df_restaurante['user_id'].unique())  
+    influencer_referencia = st.selectbox('Seleccion un influencer de referencia', df_user2)  
     # Botón para generar recomendaciones
     if st.button("Generar Recomendaciones"):
             
