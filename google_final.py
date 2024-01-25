@@ -6,9 +6,12 @@ from sklearn.metrics.pairwise import cosine_similarity
 #from streamlit import radio, sidebar, markdown, title, image, checkbox, selectbox, container, columns, multiselect, button, table, image
 
 
-
+@st.cache_data
+def get_restaurante(fn):
+    return pd.read_parquet(ruta1)
 ruta1 = "https://storage.googleapis.com/yelp-and-maps-data-processed/df_resto_user_final.parquet"
-df_restaurante = pd.read_parquet(ruta1)
+df_restaurante = get_restaurante(ruta1)
+
 
 df_florida = df_restaurante[df_restaurante['ubicacion'] == 'Florida']
 df_pennsylvania = df_restaurante[df_restaurante['ubicacion'] == 'Pennsylvania']
@@ -37,7 +40,7 @@ st.markdown("""
 
 ### Matriz
 # Tomamos las primeras 50000 filas
-df_sample = df_restaurante.head(20000)
+df_sample = df_restaurante.head(1000)
 
 # Creamos la matriz de usuario-restaurante utilizando pivot_table
 user_resto_matrix = df_sample.pivot_table(index='user_id', columns='gmap_id', values='sentimiento_etiqueta', fill_value=0)
