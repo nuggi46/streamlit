@@ -1,6 +1,5 @@
-os
+
 pandas
 streamlit
-base64
-pyarrow.parquet
+sklearn
 cosine_similarity

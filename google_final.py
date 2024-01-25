@@ -1,10 +1,9 @@
-import os
+
 import pandas as pd
 import streamlit as st
 from sklearn.metrics.pairwise import cosine_similarity
-import base64
-import pyarrow.parquet as pq 
-from streamlit import radio, sidebar, markdown, title, image, checkbox, selectbox, container, columns, multiselect, button, table, image
+#import pyarrow.parquet as pq 
+#from streamlit import radio, sidebar, markdown, title, image, checkbox, selectbox, container, columns, multiselect, button, table, image
 
 
 
