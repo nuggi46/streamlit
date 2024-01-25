@@ -2,4 +2,4 @@
 pandas
 streamlit
 scikit-learn
-cosine_similarity
+
