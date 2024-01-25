@@ -277,7 +277,21 @@ def recommend_foodie():
             recommendations_1 = recommend_restaurants_for_user(influencer_referencia, user_resto_matrix, user_similarity_df, df_restaurante)
             # Mostrar la tabla
             st.table(recommendations_1)
-            
+
+######################################### Esto lo hizo Elí ################
+def dashboard():
+    
+    st.title("Espacio para empresas")
+
+    toBusiness = '<p style="font-family:Source Sans Pro; color:Black; font-size: 16px;">Aquí podrás ver la análitica de la empresa y satisfacción de tus consumidores.</p>'
+    st.markdown(toBusiness, unsafe_allow_html=True)
+
+    new_title = '<iframe title="Report Section" width="800" height="480" src="https://app.powerbi.com/view?r=eyJrIjoiN2M0M2Q4MGQtNjAwNi00ODFhLTk4MzMtMDU0Y2FlMjQ5ZDcxIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9" frameborder="0" allowFullScreen="true"></iframe>'
+    st.markdown(new_title, unsafe_allow_html=True)
+    pass
+
+######################################### Esto lo hizo Elí ################
+
 # Contenido principal
 if sidebar_option == "Inicio":
 
@@ -311,3 +325,8 @@ elif sidebar_option == "Decido yo":
 
 elif sidebar_option == "Decide el mejor":
     recommend_foodie()   
+
+######################################### Esto lo hizo Elí ################
+elif sidebar_option == "Dashboard":
+    dashboard() 
+######################################### Esto lo hizo Elí ################
