@@ -16,9 +16,10 @@ df_restaurante = get_restaurante(ruta1)
 df_florida = df_restaurante[df_restaurante['ubicacion'] == 'Florida']
 df_pennsylvania = df_restaurante[df_restaurante['ubicacion'] == 'Pennsylvania']
 
-
+def get_user(fn2):
+    return pd.read_parquet(ruta2)
 ruta2 = "https://storage.googleapis.com/yelp-and-maps-data-processed/highRest_dummies.parquet"
-highdf = pd.read_parquet(ruta2)
+highdf = get_user(ruta2)
 
 # Sidebar con opciones
 st.sidebar.image("https://github.com/mreliflores/PF-Henry/blob/main/Sprint%233/streamlit/innovaLogo.jpeg?raw=true", width=300)
@@ -118,7 +119,7 @@ def recommend_restaurants(df_restaurante, highdf, category=None, trend=None, loc
 
 ################# Codigo modelo recomendación Parte 2 - recomienda en base a usuarios
 
-def recommend_restaurants_for_user(user_id, user_resto_matrix, user_similarity_df, df_resto_user, top_n=3):
+def recommend_restaurants_for_user(user_id, user_resto_matrix, user_similarity_df, df_restaurante, top_n=3):
     """
     Genera recomendaciones de restaurantes para un usuario específico basado en la similitud de coseno.
 
